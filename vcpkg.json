@@ -1,0 +1,11 @@
+{
+    "name": "speed-typist",
+    "version-string": "0.0.1",
+    "license": "MIT",
+    "dependencies": [
+      "fmt",
+      "catch2",
+      "raygui",
+      "raylib"
+    ]
+  }
