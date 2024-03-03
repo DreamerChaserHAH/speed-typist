@@ -1,11 +1,9 @@
 {
-    "name": "speed-typist",
+    "name": "speed-typist-storage",
     "version-string": "0.0.1",
     "license": "MIT",
     "dependencies": [
-      "fmt",
       "catch2",
-      "qt5-base",
       "sqlite3",
       "lmdb"
     ]
