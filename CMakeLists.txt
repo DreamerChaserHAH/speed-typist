@@ -13,4 +13,4 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 target_include_directories(speed-typist PRIVATE ${RAYGUI_INCLUDE_DIRS})
-target_link_libraries(speed-typist PRIVATE fmt::fmt raylib unofficial::sqlite3::sqlite3)
+target_link_libraries(speed-typist PRIVATE fmt::fmt unofficial::sqlite3::sqlite3 Qt5::Widgets Qt5::Gui Qt5::Core)
