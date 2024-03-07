@@ -1,8 +1,15 @@
 #include <fmt/core.h>
+#include <QApplication>
+#include <QWidget>
+#include <QPushButton>
+#include <QDebug>
 
-int main(){
-    fmt::print("Hello, world! WHATTT\n");
-    return 0;
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    QPushButton button ("Hello world !");
+    button.show();
+    return a.exec();
 }
 
 /*
