@@ -4,6 +4,7 @@
     "license": "MIT",
     "dependencies": [
       "catch2",
-      "sqlite3"
+      "sqlite3",
+      "lmdb"
     ]
 }

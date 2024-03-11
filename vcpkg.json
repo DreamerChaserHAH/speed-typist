@@ -5,8 +5,8 @@
     "dependencies": [
       "fmt",
       "catch2",
-      "raygui",
-      "raylib",
-      "sqlite3"
+      "qt5-base",
+      "sqlite3",
+      "lmdb"
     ]
 }

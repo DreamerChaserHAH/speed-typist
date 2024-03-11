@@ -13,7 +13,7 @@ class StorageManagementModule{
     public:
         StorageManagementModule(){};
         virtual void saveData(std::string key, std::string data) = 0;
-        virtual void loadData(std::string key) = 0;
+        virtual std::string loadData(std::string key) = 0;
 };
 
 class StorageManagementModuleFactory{

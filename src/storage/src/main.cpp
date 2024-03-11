@@ -12,7 +12,6 @@ void process_data(StorageManagementModule& module){
 }
 
 int main(){
-
     process_data(*storageManagementModule);
     return 0;
 }
