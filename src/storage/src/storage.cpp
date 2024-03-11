@@ -56,7 +56,8 @@ class LmdbStorage : public StorageManagementModule
 public:
     LmdbStorage()
     {
-        if(!std::filesystem::is_directory("lmdb_database")){
+        if (!std::filesystem::is_directory("lmdb_database"))
+        {
             std::filesystem::create_directory("lmdb_database");
         }
         mdb_env_create(&env);
@@ -101,7 +102,7 @@ public:
         key_val.mv_data = (void *)key.c_str();
         auto rc = mdb_get(txn, dbi, &key_val, &data_val);
         std::string return_string;
-        return_string = rc == 0? std::string(reinterpret_cast<char *>(data_val.mv_data), data_val.mv_size): "";
+        return_string = rc == 0 ? std::string(reinterpret_cast<char *>(data_val.mv_data), data_val.mv_size) : "";
         mdb_cursor_close(cursor);
         mdb_txn_commit(txn);
         mdb_close(env, dbi);
