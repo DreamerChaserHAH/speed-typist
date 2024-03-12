@@ -6,12 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(src/storage)
+add_subdirectory(src/gui)
 add_executable(speed-typist src/main.cpp)
 
-include_directories(src/storage/include)
+include_directories(src/storage/include src/gui/include)
 
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-
-target_link_libraries(speed-typist Qt5::Core Qt5::Widgets Qt5::Gui speed-typist-storage-lib)
+target_link_libraries(speed-typist speed-typist-storage-lib speed-typist-gui-lib)

@@ -1,0 +1,9 @@
+{
+    "name": "speed-typist-gui",
+    "version-string": "0.0.1",
+    "license": "MIT",
+    "dependencies": [
+      "catch2",
+      "qt5-base"
+    ]
+}

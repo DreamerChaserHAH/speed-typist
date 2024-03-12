@@ -1,20 +1,27 @@
-#include <QApplication>
-#include <QWidget>
-#include <QPushButton>
-#include <QDebug>
 #include <storage.hpp>
 #include <memory>
 #include <iostream>
+#include <gui.hpp>
 
-std::unique_ptr<StorageManagementModule> storageManagementModule = StorageManagementModuleFactory::createModule(LMDB_STORAGE);
+std::unique_ptr<StorageManagementModule> storageManagementModule;
+std::unique_ptr<GuiModule> guiManagementModule;
+std::unique_ptr<GuiLogicStruct> guiLogicModule = std::make_unique<GuiLogicStruct>();
+
+std::string test(){
+    return "";
+}
 
 int main(int argc, char *argv[])
 {
-    storageManagementModule->saveData("key", "test day working here");
-    std::cout << storageManagementModule->loadData("key") << std::endl;
+    storageManagementModule = StorageManagementModuleFactory::createModule(LMDB_STORAGE);
 
-    QApplication a(argc, argv);
-    QPushButton button ("Hello world !");
-    button.show();
-    return a.exec();
+    guiLogicModule->load_highscore = [](){
+        return storageManagementModule->loadData("key");
+    };
+
+    guiManagementModule = GuiModuleFactory::createModule(QT5, argc, argv, *guiLogicModule);
+
+    storageManagementModule->saveData("key", "0");
+    std::cout << storageManagementModule->loadData("key") << std::endl;
+    return guiManagementModule->start_gui();
 }
